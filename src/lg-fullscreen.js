@@ -1,4 +1,4 @@
-(function($, window, document, undefined) {
+(function() {
 
     'use strict';
 
@@ -91,4 +91,4 @@
 
     $.fn.lightGallery.modules.fullscreen = Fullscreen;
 
-})(jQuery, window, document);
+})();
