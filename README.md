@@ -33,6 +33,9 @@ $ npm install lg-fullscreen
 
 You can also directly download lg-fullscreen from github.
 
+#### CDN
+If you prefer to use a CDN you can load files via [jsdelivr](https://www.jsdelivr.com/projects/lg-fullscreen)
+
 #### Include Javascript files
 Include lg-fullscreen plugin after lightgallery.min.js.
 ``` html
