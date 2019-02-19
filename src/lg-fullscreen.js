@@ -6,6 +6,15 @@
         fullScreen: true
     };
 
+    function isFullScreen() {
+        return (
+            document.fullscreenElement ||
+            document.mozFullScreenElement ||
+            document.webkitFullscreenElement ||
+            document.msFullscreenElement
+        );
+    }
+
     var Fullscreen = function(element) {
 
         // get lightGallery core plugin data
@@ -71,11 +80,10 @@
         });
 
         this.core.$outer.find('.lg-fullscreen').on('click.lg', function() {
-            if (!document.fullscreenElement &&
-                !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-                _this.requestFullscreen();
-            } else {
+            if (isFullScreen()) {
                 _this.exitFullscreen();
+            } else {
+                _this.requestFullscreen();
             }
         });
 
@@ -84,7 +92,9 @@
     Fullscreen.prototype.destroy = function() {
 
         // exit from fullscreen if activated
-        this.exitFullscreen();
+        if(isFullScreen()) {
+            this.exitFullscreen();
+        }
 
         $(document).off('fullscreenchange.lg webkitfullscreenchange.lg mozfullscreenchange.lg MSFullscreenChange.lg');
     };
