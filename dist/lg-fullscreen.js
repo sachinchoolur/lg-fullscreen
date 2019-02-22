@@ -1,4 +1,4 @@
-/*! lg-fullscreen - v1.1.0 - 2019-02-19
+/*! lg-fullscreen - v1.1.0 - 2019-02-22
 * http://sachinchoolur.github.io/lightGallery
 * Copyright (c) 2019 Sachin N; Licensed GPLv3 */
 
@@ -80,7 +80,7 @@
     };
 
     Fullscreen.prototype.exitFullscreen = function() {
-        if (document.exitFullscreen) {
+        if (document.Fullscreen && document.exitFullscreen) {
             document.exitFullscreen();
         } else if (document.msExitFullscreen) {
             document.msExitFullscreen();
