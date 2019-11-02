@@ -3,7 +3,8 @@
     'use strict';
 
     var defaults = {
-        fullScreen: true
+        fullScreen: true,
+        fullScreenTitle: 'Fullscreen'
     };
 
     function isFullScreen() {
@@ -39,7 +40,7 @@
                 !document.mozFullScreenEnabled && !document.msFullscreenEnabled) {
                 return;
             } else {
-                fullScreen = '<span class="lg-fullscreen lg-icon"></span>';
+                fullScreen = '<span class="lg-fullscreen lg-icon" title="' + this.core.s.fullScreenTitle + '"></span>';
                 this.core.$outer.find('.lg-toolbar').append(fullScreen);
                 this.fullScreen();
             }
