@@ -39,7 +39,7 @@
                 !document.mozFullScreenEnabled && !document.msFullscreenEnabled) {
                 return;
             } else {
-                fullScreen = '<span class="lg-fullscreen lg-icon"></span>';
+                fullScreen = '<button aria-label="Toggle fullscreen" class="lg-fullscreen lg-icon"></button>';
                 this.core.$outer.find('.lg-toolbar').append(fullScreen);
                 this.fullScreen();
             }
